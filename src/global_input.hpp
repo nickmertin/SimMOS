@@ -8,7 +8,7 @@
 namespace simmos {
     class GlobalInput final : public pipeline::source_base<LogicLevel> {
     public:
-        void set(bool value);
+        void set(LogicLevel value);
 
         ~GlobalInput() override;
     };

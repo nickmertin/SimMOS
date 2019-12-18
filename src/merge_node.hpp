@@ -18,6 +18,8 @@ namespace simmos {
     public:
         explicit MergeNode(size_t count);
 
+        explicit MergeNode(const std::vector<pipeline::source<LogicLevel>> &sources);
+
         const pipeline::sink<LogicLevel> &operator[](size_t index) const;
 
         ~MergeNode() override;

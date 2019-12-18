@@ -18,6 +18,12 @@ simmos::MergeNode::MergeNode(size_t count) {
     }
 }
 
+simmos::MergeNode::MergeNode(const std::vector<pipeline::source<LogicLevel>> &sources) : MergeNode(sources.size()) {
+    for (size_t i = 0; i < sources.size(); ++i) {
+        sources[i] | _inputs[i];
+    }
+}
+
 const pipeline::sink<simmos::LogicLevel> &simmos::MergeNode::operator[](size_t index) const {
     return _inputs[index];
 }

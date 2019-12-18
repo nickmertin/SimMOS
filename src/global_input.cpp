@@ -1,7 +1,7 @@
 #include "global_input.hpp"
 
-void simmos::GlobalInput::set(bool value) {
-    push(value ? LogicLevel::HIGH : LogicLevel::LOW);
+void simmos::GlobalInput::set(LogicLevel value) {
+    push(value);
 }
 
 simmos::GlobalInput::~GlobalInput() = default;
