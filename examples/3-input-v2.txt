@@ -1,0 +1,15 @@
+# Function: f(a, b, c) = not a or (not b and c)
+INPUT a b c
+OUTPUT f
+PMOS c ~vdd not_c
+NMOS c not_c ~vss
+PMOS not_c ~vdd pmos_1
+PMOS b pmos_1 nor
+NMOS not_c nor ~vss
+NMOS b nor ~vss
+PMOS nor ~vdd or
+NMOS nor or ~vss
+PMOS or ~vdd f
+PMOS a ~vdd f
+NMOS or f nmos_1
+NMOS a nmos_1 ~vss
